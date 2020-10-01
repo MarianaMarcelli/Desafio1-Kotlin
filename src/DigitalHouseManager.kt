@@ -55,8 +55,19 @@ class DigitalHouseManager(val listaAlunos: MutableList<Aluno> = mutableListOf(),
     }
 
 
-    fun excluirProfessor(codigoProfessor: Int) {
-        TODO()
+    fun excluirProfessor(codigoProfessor: Int) : Boolean {
+//      // listaProfessores.filter{ it.codigoProfessor == codigoProfessor}.map { it.codigoProfessor }
+//        val achaCodigoProfessor = listaProfessores.map { it.codigoProfessor }
+//        if (!achaCodigoProfessor.contains(codigoProfessor)){
+//            return false
+//            } else{
+//            listaProfessores.remove(Professor())
+//        }
+
+
+
+
+       // TODO()
     }
 
 
