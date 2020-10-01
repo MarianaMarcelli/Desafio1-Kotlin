@@ -1,27 +1,25 @@
 fun main() {
 
-    val aluno1 = Aluno(nome="Julia" , sobrenome="Lustre", codigoAluno = 1111 )
-    val aluno2 = Aluno(nome="Mariana" , sobrenome= "MM", codigoAluno = 2222 )
-    val aluno3 = Aluno(nome= "Luiza", sobrenome="JJ", codigoAluno = 3333 )
-    val aluno4= Aluno(nome="Lucas" , sobrenome="ll", codigoAluno = 4444 )
-    val aluno5 = Aluno(nome="Marcio" , sobrenome="Marc", codigoAluno = 5555 )
+    val manager = DigitalHouseManager()
 
-    var alunosCurso1 = arrayListOf<Aluno>(aluno1, aluno2, aluno3)
-    var curso1 = Curso(
-            "Curso1",
-            11,
-            ProfessorTitular(Professor("P1", "Pfrof", 10, 1), "lógica"),
-            ProfessorAdjunto(Professor("adj", "profe",2, 2), 10),
-            4, alunosCurso1
-    )
-    println(alunosCurso1)
-    println(alunosCurso1.size)
-    curso1.adicionarUmAluno(aluno4)
-    println(alunosCurso1.size)
-    println(alunosCurso1)
-    curso1.adicionarUmAluno(aluno5)
-    curso1.excluirAluno(aluno1)
-    curso1.adicionarUmAluno(aluno5)
+    manager.registrarCurso(nomeCurso = "ios mobile", codigoCurso = 12, quantidadeMaximaDeAlunos = 5)
+    manager.registrarCurso(nomeCurso = "lógica", codigoCurso = 22, quantidadeMaximaDeAlunos = 10)
+    manager.registrarCurso(nomeCurso = "android mobile", codigoCurso = 156, quantidadeMaximaDeAlunos = 10)
+    println(manager.listaCursos)
+    manager.excluirCurso(codigoCurso = 22)
+    println(manager.listaCursos)
+
+    manager.registrarProfessorAdjunto(nome = "Bob", sobrenome = "Domzalski", codigoProfessor = 200, quantidadeDeHorasDeMonitoria = 20)
+    manager.registrarProfessorAdjunto(nome = "Jim", sobrenome = "Lake", codigoProfessor = 201, quantidadeDeHorasDeMonitoria = 15)
+    manager.registrarProfessorAdjunto(nome = "Clara", sobrenome = "Numes", codigoProfessor = 202, quantidadeDeHorasDeMonitoria = 20)
+    manager.registrarProfessorTitular(nome = "Walter", sobrenome = "Strickler", codigoProfessor = 100, especialidade = "ios mobile")
+    manager.registrarProfessorTitular(nome = "Merlin", sobrenome = "Magician", codigoProfessor = 101, especialidade = "lógica")
+    manager.registrarProfessorTitular(nome = "Barbara", sobrenome = "", codigoProfessor = 102, especialidade = "android mobile")
+    println(manager.listaProfessores)
+ //   manager.excluirProfessor(codigoProfessor = 200)
+//    println(manager.listaProfessores)
+//    manager.matricularAluno(nome = "Júlia", sobrenome = "Lustre", codigoAluno = 11)
 
 
 }
+
