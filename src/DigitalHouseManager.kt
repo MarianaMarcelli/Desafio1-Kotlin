@@ -1,7 +1,7 @@
 class DigitalHouseManager(val listaAlunos: MutableList<Aluno> = mutableListOf(),
-                               val listaProfessores: MutableList<Professor> = mutableListOf(),
-                               val listaCursos: MutableList<Curso> = mutableListOf(),
-                               val listaMatriculas: MutableList<Matricula> = mutableListOf()
+                          val listaProfessores: MutableList<Professor> = mutableListOf(),
+                          val listaCursos: MutableList<Curso> = mutableListOf(),
+                          val listaMatriculas: MutableList<Matricula> = mutableListOf()
 ) {
 
     fun registrarCurso(nomeCurso: String, codigoCurso: Int,
@@ -35,9 +35,7 @@ class DigitalHouseManager(val listaAlunos: MutableList<Aluno> = mutableListOf(),
                 quantidadeDeHorasDeMonitoria
         )
         listaProfessores.add(novoAdjunto)
-
     }
-
 
     fun registrarProfessorTitular(
             nome: String,
@@ -54,24 +52,17 @@ class DigitalHouseManager(val listaAlunos: MutableList<Aluno> = mutableListOf(),
         listaProfessores.add(novoTitular)
     }
 
-
-    fun excluirProfessor(codigoProfessor: Int) : Boolean {
-//      // listaProfessores.filter{ it.codigoProfessor == codigoProfessor}.map { it.codigoProfessor }
-//        val achaCodigoProfessor = listaProfessores.map { it.codigoProfessor }
-//        if (!achaCodigoProfessor.contains(codigoProfessor)){
-//            return false
-//            } else{
-//            listaProfessores.remove(Professor())
-//        }
-
-
-
-
-       // TODO()
+    fun excluirProfessor(codigoProfessor: Int) {
+        val iterator = listaProfessores.listIterator()
+        while (iterator.hasNext()) {
+            val professor = iterator.next()
+            if (professor.codigoProfessor == codigoProfessor) {
+                iterator.remove()
+            }
+        }
     }
 
-
-        fun matricularAluno(
+    fun matricularAluno(
             nome: String,
             sobrenome: String,
             codigoAluno: Int
@@ -84,17 +75,31 @@ class DigitalHouseManager(val listaAlunos: MutableList<Aluno> = mutableListOf(),
         listaAlunos.add(novoAluno)
     }
 
+    fun matricularAlunoCurso(codigoAluno: Int, codigoCurso: Int) {
+        val aluno = listaAlunos.find { it.codigoAluno == codigoAluno }
+        val cursoescolhido = listaCursos.find { it.codigoCurso == codigoCurso }
+    }
 
+    fun alocarProfessores(
+            codigoCurso: Int,
+            codigoProfessorTitular: Int,
+            codigoProfessorAdjunto: Int
+    ) {
+        val titulardoCurso = listaProfessores.find { it.codigoProfessor == codigoProfessorTitular }
+        val adjuntoDocurso = listaProfessores.find { it.codigoProfessor == codigoProfessorAdjunto }
+
+    }
+
+    override fun toString(): String {
+        return "DigitalHouseManager(listaAlunos=$listaAlunos, listaProfessores=$listaProfessores, listaCursos=$listaCursos, listaMatriculas=$listaMatriculas)"
+    }
 
 }
 
 
-    fun matricularAluno(codigoAluno: Int, codigoCurso: Int) {
-    TODO()   }
 
-    fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int,
-                      codigoProfessorAdjunto: Int) {
-    TODO()}
+
+
 
 
 

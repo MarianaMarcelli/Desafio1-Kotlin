@@ -23,7 +23,7 @@ class Curso(
         this.alunosMatriculados = alunosMatriculados
     }
 
-     fun adicionarUmAluno(umAluno: Aluno): Boolean {
+    fun adicionarUmAluno(umAluno: Aluno): Boolean {
         if (alunosMatriculados.contains(umAluno)) {
             println("${umAluno.nome} ${umAluno.sobrenome} você já está matriculado(a) neste curso")
             return false

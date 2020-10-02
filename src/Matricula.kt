@@ -8,4 +8,9 @@ data class Matricula (
     init {
         dataMatricula = LocalDateTime.now()
     }
+
+    override fun toString(): String {
+        return "Matricula(aluno=$aluno, curso=$curso, dataMatricula=$dataMatricula)"
+    }
+
 }

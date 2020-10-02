@@ -19,5 +19,9 @@ class ProfessorTitular(
         this.especialidade = especialidade
     }
 
+    override fun toString(): String {
+        return "Professor(nome='$nome', sobrenome='$sobrenome', codigoProfessor=$codigoProfessor, tempoDeCasa=$tempoDeCasa, especialidade='$especialidade')"
+    }
+
 
 }

@@ -19,4 +19,11 @@ class ProfessorAdjunto(
         this.quantidadeDeHorasDeMonitoria = quantidadeDeHorasDeMonitoria
     }
 
+    override fun toString(): String {
+        return "Professor(nome='$nome', sobrenome='$sobrenome', codigoProfessor=$codigoProfessor, tempoDeCasa=$tempoDeCasa, quantidadeDeHorasDeMonitoria=$quantidadeDeHorasDeMonitoria)"
+    }
+
+
 }
+
+
